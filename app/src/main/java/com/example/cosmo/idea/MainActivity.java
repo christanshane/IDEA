@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mDatabase.child("Name").setValue("Christan Shane D. Plaza");
+                mDatabase.child("User").setValue("Christan");
             }
         });
     }
