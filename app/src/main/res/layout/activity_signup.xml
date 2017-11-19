@@ -27,7 +27,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Full Name"
-        android:inputType="textPassword" />
+        android:inputType="textPersonName" />
 
     <Space
         android:layout_width="wrap_content"
@@ -35,7 +35,7 @@
         />
 
     <EditText
-        android:id="@+id/passwordTxt"
+        android:id="@+id/pass1Txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -47,7 +47,7 @@
         />
 
     <EditText
-        android:id="@+id/repeatpasswordTxt"
+        android:id="@+id/pass2Txt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Re-enter password"
