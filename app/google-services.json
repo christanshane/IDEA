@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "533019144292",
-    "firebase_url": "https://ideafirebase.firebaseio.com",
-    "project_id": "ideafirebase",
-    "storage_bucket": "ideafirebase.appspot.com"
+    "project_number": "791437206988",
+    "firebase_url": "https://ideafirebase-2cde4.firebaseio.com",
+    "project_id": "ideafirebase-2cde4",
+    "storage_bucket": "ideafirebase-2cde4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:533019144292:android:6f3494fbb99a9ca9",
+        "mobilesdk_app_id": "1:791437206988:android:6f3494fbb99a9ca9",
         "android_client_info": {
           "package_name": "com.example.cosmo.idea"
         }
       },
       "oauth_client": [
         {
-          "client_id": "533019144292-cjrldaulq6egllc5bdltna8qdr7fna7t.apps.googleusercontent.com",
+          "client_id": "791437206988-3c8toot2k064qo3imhilgfo280dn1a6g.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.cosmo.idea",
@@ -23,13 +23,13 @@
           }
         },
         {
-          "client_id": "533019144292-9meeujh6jcbpthcs9bklrl6uqmhq11rb.apps.googleusercontent.com",
+          "client_id": "791437206988-utstkkqjo0qvjhupoeq5np89og5btmnj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBccZdsI1rGgweQWMj7BywfPgkZewZsSOM"
+          "current_key": "AIzaSyCHDhdg5oC1dSAZ4tfmjxHoLu7Nw677UZo"
         }
       ],
       "services": {
@@ -40,7 +40,7 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "533019144292-9meeujh6jcbpthcs9bklrl6uqmhq11rb.apps.googleusercontent.com",
+              "client_id": "791437206988-utstkkqjo0qvjhupoeq5np89og5btmnj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

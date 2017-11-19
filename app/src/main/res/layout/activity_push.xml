@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.cosmo.idea.signup">
+    tools:context="com.example.cosmo.idea.pushActivity">
     <Space
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         />
 
     <EditText
-        android:id="@+id/emailTxt"
+        android:id="@+id/emailPush"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
@@ -23,7 +23,7 @@
         />
 
     <EditText
-        android:id="@+id/nameTxt"
+        android:id="@+id/namePush"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Full Name"
@@ -35,7 +35,7 @@
         />
 
     <EditText
-        android:id="@+id/pass1Txt"
+        android:id="@+id/pass1Push"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Password"
@@ -47,7 +47,7 @@
         />
 
     <EditText
-        android:id="@+id/pass2Txt"
+        android:id="@+id/pass2Push"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Re-enter password"
@@ -59,34 +59,15 @@
         />
 
     <Button
-        android:id="@+id/signupBtn"
+        android:id="@+id/pushBtn"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:text="Signup"/>
+        android:text="Push"/>
 
     <Space
         android:layout_width="wrap_content"
         android:layout_height="15dp"
         />
-
-    <TextView
-        android:id="@+id/loginRedirect"
-        android:layout_gravity="center_horizontal"
-        android:text="Already have an account? Login here."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="15dp"
-        />
-
-    <Button
-        android:id="@+id/testBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Push"
-        android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

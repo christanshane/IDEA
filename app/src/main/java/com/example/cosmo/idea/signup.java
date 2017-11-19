@@ -16,13 +16,19 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.util.HashMap;
 
 public class signup extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private TextView loginRedirect;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private Button signupbtn;
+    private Button signupbtn, testBtn;
+    private FirebaseDatabase database;
+    private DatabaseReference myRef;
     private EditText emailTxt, nameTxt, pass1Txt, pass2Txt;
 
     @Override
@@ -35,6 +41,9 @@ public class signup extends AppCompatActivity {
         nameTxt = (EditText)findViewById(R.id.nameTxt);
         pass1Txt = (EditText)findViewById(R.id.pass1Txt);
         pass2Txt = (EditText)findViewById(R.id.pass2Txt);
+        testBtn = (Button)findViewById(R.id.testBtn);
+        myRef = FirebaseDatabase.getInstance().getReference();
+
 
         mAuthListener = new FirebaseAuth.AuthStateListener(){
             @Override
@@ -53,6 +62,14 @@ public class signup extends AppCompatActivity {
             }
         };
 
+        testBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+                startActivity(new Intent(getApplicationContext(), pushActivity.class));
+            }
+        });
+
         signupbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -61,7 +78,7 @@ public class signup extends AppCompatActivity {
                 String pass1 = pass1Txt.getText().toString();
                 String pass2 = pass2Txt.getText().toString();
                 if(pass1.equals(pass2)){
-                    createAccount(email,pass1);
+                    createAccount(name,email,pass1);
                 }
             }
         });
@@ -79,17 +96,42 @@ public class signup extends AppCompatActivity {
         }
     }
 
-    public void createAccount(String email, String password){
+    public void createAccount(final String email, final String password, final String name){
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         Log.d(TAG, "createUserWithEmail:onComplete:" + task.isSuccessful());
+                        if(task.isSuccessful()){
+                            Toast.makeText(signup.this,"Registered!", Toast.LENGTH_LONG).show();
+                        }
+
                         if (!task.isSuccessful()) {
                             Toast.makeText(signup.this, "Auth Failed",
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
+    }
+
+    public void signIn(String email, String pass){
+        mAuth.signInWithEmailAndPassword(email,pass);
+    }
+
+    public void database(String name, String email, String pass){
+        HashMap<String, String> data = new HashMap<String, String>();
+        data.put("Name", name);
+        data.put("Email", email);
+        data.put("Pass", pass);
+        myRef.push().setValue(data).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                if(task.isSuccessful()){
+                    Toast.makeText(getApplicationContext(),"Pushed!", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(getApplicationContext(),"Pulled!", Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 }
